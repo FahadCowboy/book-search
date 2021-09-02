@@ -65,7 +65,7 @@ const displayBooks = books => {
         ol.innerHTML = `
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="ms-2 me-auto">
-                    <div class="fw-bold">Total books found</div>
+                    <div style="font-weight:bold">Total books found</div>
                 </div>
                 <span class="badge bg-primary rounded-pill p-2 text-white">${books.numFound}</span>
             </li>
