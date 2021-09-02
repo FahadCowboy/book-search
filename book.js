@@ -26,7 +26,10 @@ const loadBooks = async () => {
         resultContainer.appendChild(div)
         return
     } else {
-    //If search value is not empty, The API will be fetched.
+        //spinner activated here
+        document.getElementById('spinner').style.display = 'block'
+
+        //If search value is not empty, The API will be fetched.
         const url = `https://openlibrary.org/search.json?q=${searchText}`
         const response = await fetch(url)
         const data = await response.json()
@@ -90,6 +93,6 @@ const displayBooks = books => {
         `
 
         resultContainer.appendChild(div)
-        console.log(books)
+        document.getElementById('spinner').style.display = 'none'
     });
 }
