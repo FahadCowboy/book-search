@@ -37,6 +37,7 @@ const loadBooks = async () => {
         //Here we are checking the the Array of data is empty or not
         if(data.docs.length === 0){
             //If the array of data is empty that means search value was incorrect, then error msg bellow will be executed.
+            document.getElementById('spinner').style.display = 'none'
             const div = document.createElement('div')
             div.classList = 'alert alert-danger mx-auto text-center'
             div.innerHTML = `
