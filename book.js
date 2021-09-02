@@ -67,7 +67,7 @@ const displayBooks = books => {
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">Total books found</div>
                 </div>
-                <span class="badge bg-primary rounded-pill">${books.numFound}</span>
+                <span class="badge bg-primary rounded-pill p-2 text-white">${books.numFound}</span>
             </li>
         `
         totalBooks.appendChild(ol)
