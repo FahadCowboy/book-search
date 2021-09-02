@@ -27,7 +27,7 @@ const loadBooks = async () => {
         return
     } else {
     //If search value is not empty, The API will be fetched.
-        const url = `http://openlibrary.org/search.json?q=${searchText}`
+        const url = `https://openlibrary.org/search.json?q=${searchText}`
         const response = await fetch(url)
         const data = await response.json()
 
@@ -44,7 +44,7 @@ const loadBooks = async () => {
             resultContainer.appendChild(div)
             return
         }else{
-        //If all are goes wll, we will send the real data to the display function.
+        //If everything goes wll, we will send the real data to the display function.
             displayBooks(data)
         }
     }
@@ -57,7 +57,7 @@ const displayBooks = books => {
     const resultContainer = document.getElementById('result-container')
 
     const ol = document.createElement('ol')
-        ol.classList = `list-group list-group-numbered w-25 mx-auto mb-4`
+        ol.classList = `list-group list-group-numbered col-12 col-lg-4 mx-auto mb-4`
         ol.innerHTML = `
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="ms-2 me-auto">
@@ -75,15 +75,16 @@ const displayBooks = books => {
         div.classList = 'col-lg-4 py-3'
         div.innerHTML = `
         <div class="bg-white rounded">
-            <div style="height: 320px; display:flex; justify-content: center;">
+            <div style="height: 320px;background-color: #2c2f59; border-radius: 3px;display:flex;justify-content: center;">
                 <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="h-100" alt="...">
             </div>
             <div class="">
                 <h5 class="p-3">${book.title}</h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-transparent">Author name: ${book?.author_name?.[0]?? 'Not found'}</li>
-                <li class="list-group-item bg-transparent">First published: ${book?.first_publish_year ?? 'Not found'}</li>
+                <li class="list-group-item bg-transparent"><span style="font-weight:bold;">Author name:</span> ${book?.author_name?.[0]?? 'Not found'}</li>
+                <li class="list-group-item bg-transparent"><span style="font-weight:bold;">First published:</span> ${book?.first_publish_year ?? 'Not found'}</li>
+                <li class="list-group-item bg-transparent"><span style="font-weight:bold;">Publisher:</span> ${book?.publisher?.[0] ?? 'Not found'}</li>
             </ul>
         </div>
         `
