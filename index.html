@@ -19,16 +19,57 @@
 <body>
     <div class="container">
         <form class="col-md-6 m-auto py-5">
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <input type="text" id="input-field" class="form-control" placeholder="Search books...">
                 <div class="input-group-append">
-                    <button type="button" class="btn btn-danger" onclick="loadBooks()">Search</button>
+                    <button type="button" class="btn btn-info" onclick="loadBooks()">Search</button>
                 </div>
             </div>
         </form>
+    </div>
 
 
 
+    <div class="container-fluid">
+        <div class="container">
+            <div id="total-books">
+                <!-- <ol class="list-group list-group-numbered w-25 mx-auto">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Total books found</div>
+                        </div>
+                        <span class="badge bg-primary rounded-pill">2145</span>
+                    </li>
+                </ol> -->
+            </div>
+            
+            <div id="result-container" class="row g-4">
+
+                <div id="spinner" class="spinner-border mx-auto my-5 text-info d-none" style="width: 100px; height: 100px" role="status">
+                </div>
+                <!-- <div class="alert alert-danger w-50 mx-auto text-center" role="alert">
+                    <div style="font-weight:bold; font-size: 1.4rem">
+                      The input you have given is not recognized as book name!
+                    </div>
+                </div> -->
+                    <!-- <div class="col-lg-4 py-3">
+                        <div class="bg-white rounded">
+                            <img src="..." class="" alt="...">
+                            <div class="">
+                                <h5 class="p-3">Card title</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent">An item</li>
+                                <li class="list-group-item bg-transparent">A second item</li>
+                                <li class="list-group-item bg-transparent">A third item</li>
+                            </ul>
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="book.js"></script>
 </body>
 </html>
